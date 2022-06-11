@@ -3,17 +3,13 @@ import React from "react";
 const List = ()=>{
     const [allProjects, setAllProjects] = React.useState([])
 
-    async function getProjects(){
-        const res = await fetch("https://task-node-api-rest.herokuapp.com/projects")
-        //console.log(res)
-        const data = await res.json()
-        console.log(data)
-        
-        setAllProjects(data)
-    }
-
     React.useEffect(() => {
-        
+        async function getProjects(){
+            const res = await fetch("https://task-node-api-rest.herokuapp.com/projects")
+            const data = await res.json()
+            setAllProjects(data)
+
+        }
         getProjects()
     }, [])
 
