@@ -5,7 +5,7 @@ const List = ()=>{
 
     React.useEffect(() => {
         async function getProjects(){
-            const res = await fetch("https://task-node-api-rest.herokuapp.com/projects")
+            const res = await fetch("https://node-js-api-rest-production.up.railway.app/projects")
             const data = await res.json()
             setAllProjects(data)
 
